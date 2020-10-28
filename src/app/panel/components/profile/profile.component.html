@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="jumbotron">
+    <p class="display-4 text-center lead">Iniciar sesión</p>
+    <hr class="my-4">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <p class="display-8 text-center">Credenciales de acceso</p>
+      <div class="form-group row ">
+        <div class="col-sm-6 mb-1">
+          <input type="email" class="form-control" placeholder="Correo electrónico" formControlName="email">
+        </div>
+        <div class="col-sm-6 mb-1">
+          <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+        </div>
+      </div>
+      <div class = "d-flex">
+        <a class="btn btn-danger btn-lg" routerLink="">Cancelar</a>
+        <button class="btn btn-primary btn-lg ml-auto" type="submit" [disabled]="!loginForm.valid">Iniciar sesión</button>
+       </div>
+       <hr class="my-4">
+      <div class="form-group row ">
+        <div class="col-sm-6 mb-1">
+          <a routerLink="/panel/nuevo-nutriologo" class="text-info">¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="col-sm-6 mb-1">
+          <a routerLink="/panel/nuevo-nutriologo" class="text-info">¿No tiene una cuenta?</a>
+        </div>
+      </div>
