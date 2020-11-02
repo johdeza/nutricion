@@ -18,7 +18,7 @@ export class AuthService {
   }
 
   logout(){
-    //let accessToken = localStorage.getItem("token");
+    let accessToken = localStorage.getItem("token");
     //let id = localStorage.getItem("id");
     //return this.http.put(`${this.apiUrl}logout/${id}`,
     localStorage.removeItem('token');
