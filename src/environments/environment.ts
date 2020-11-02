@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://3.86.214.41/api/v1/web/"
+  //apiUrl: "http://3.86.214.41/api/v1/web/"
   //apiUrl: "https://reqres.in/api/"
 };
 
