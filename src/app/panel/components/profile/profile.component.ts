@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
   login() {
     this.authService.login(this.loginForm.value).subscribe(res => {
       alert(JSON.stringify(res));
-      localStorage.setItem('token', res['token']);
+      localStorage.setItem('x-access-token', res['token']);
       localStorage.setItem('id', res['user']['id']);
       localStorage.setItem('email', res['user']['email']);
       this.router.navigateByUrl('/panel');

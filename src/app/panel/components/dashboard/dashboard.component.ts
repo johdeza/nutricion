@@ -15,7 +15,10 @@ export class DashboardComponent implements OnInit {
   }
 
 logout(){
-  this.autService.logout();
+  this.autService.logout().subscribe(res => {
+    alert(JSON.stringify(res));
+  }, error => {
+    alert(JSON.stringify(error.error));
+  })
 }
-
 }
