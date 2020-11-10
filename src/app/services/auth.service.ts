@@ -18,17 +18,22 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}login`, body)
   }
 
-
   logout() {
     let id = localStorage.getItem("id");
-    return this.http.put(`${this.apiUrl}logout/${id}`, {
-      headers: new HttpHeaders().set('x-access-token', localStorage.getItem("x-access-token"))     
-    });
-    localStorage.removeItem('x-access-token');
-    localStorage.removeItem('email');
-    localStorage.removeItem('id');
-    this.router.navigateByUrl('/');
+    return this.http.put(`${this.apiUrl}logout/${id}`, {}, this.headers());
   }
 
+  headers() {
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      "x-access-token": `${this.leerToken()}`
+    });
+    return { headers: headers };
+  }
+  
+  leerToken() {
+    console.log(localStorage.getItem("x-access-token"));
+    return localStorage.getItem("x-access-token");
+  }
 
 }

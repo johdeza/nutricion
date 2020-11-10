@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
 logout(){
   this.autService.logout().subscribe(res => {
     alert(JSON.stringify(res));
+    localStorage.clear();
+    this.router.navigateByUrl('/');
   }, error => {
     alert(JSON.stringify(error.error));
   })
